@@ -2,9 +2,9 @@ name: DSA Quality Gate
 
 on:
   push:
-    branches: ["**"]
+    branches: ['**']
   pull_request:
-    branches: ["**"]
+    branches: ['**']
 
 jobs:
   quality:
