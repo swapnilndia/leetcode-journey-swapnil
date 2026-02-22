@@ -10,6 +10,12 @@
     "format": "prettier . --write",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swapnilndia/leetcode-journey-swapnil.git"
@@ -23,8 +29,10 @@
   },
   "homepage": "https://github.com/swapnilndia/leetcode-journey-swapnil#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "eslint": "^10.0.1",
     "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1"
