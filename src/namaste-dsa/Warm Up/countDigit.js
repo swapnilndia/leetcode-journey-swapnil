@@ -6,6 +6,7 @@ function countDigitsOfNumInArray(arr) {
   if (arr.length < 1) return 'no elements found in the arr';
   for (let i = 0; i < arr.length; i++) {
     let count = 0;
+
     let num = Math.abs(arr[i]);
     if (num === 0) {
       console.log(`${num} has 1 digit`);
