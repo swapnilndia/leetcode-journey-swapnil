@@ -1,0 +1,32 @@
+name: DSA Quality Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 🔴 Must pass — no auto fix in CI
+      - name: Run ESLint
+        run: npm run lint
+
+      # 🔴 Must already be formatted
+      - name: Verify Prettier formatting
+        run: npx prettier . --check
