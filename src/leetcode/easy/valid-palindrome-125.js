@@ -19,24 +19,24 @@
  */
 
 var isPalindrome = function (s) {
-    let alphaNumericString = "";
-    const lowerCaseString = s.toLowerCase()
-    for (let i = 0; i < lowerCaseString.length; i++) {
-        if (isCharacterValid(lowerCaseString[i])) {
-            alphaNumericString = alphaNumericString + lowerCaseString[i]
-        }
+  let alphaNumericString = '';
+  const lowerCaseString = s.toLowerCase();
+  for (let i = 0; i < lowerCaseString.length; i++) {
+    if (isCharacterValid(lowerCaseString[i])) {
+      alphaNumericString = alphaNumericString + lowerCaseString[i];
     }
-    let reversedString = "";
-    for (let i = alphaNumericString.length - 1; i >= 0; i--) {
-        reversedString = reversedString + alphaNumericString[i]
-    }
-    return reversedString === alphaNumericString
-
+  }
+  let reversedString = '';
+  for (let i = alphaNumericString.length - 1; i >= 0; i--) {
+    reversedString = reversedString + alphaNumericString[i];
+  }
+  return reversedString === alphaNumericString;
 };
 function isCharacterValid(char) {
-    const asciiValue = char.charCodeAt(0);
-    if ((asciiValue <= 122 && asciiValue >= 97) || (asciiValue <= 57 && asciiValue >= 48)) {
-        return true
-    }
-
+  const asciiValue = char.charCodeAt(0);
+  if ((asciiValue <= 122 && asciiValue >= 97) || (asciiValue <= 57 && asciiValue >= 48)) {
+    return true;
+  }
 }
+
+isPalindrome('hari');
