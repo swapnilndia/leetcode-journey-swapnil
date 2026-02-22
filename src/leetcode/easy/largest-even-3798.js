@@ -17,13 +17,13 @@
  */
 
 var largestEven = function (s) {
-    let largestNumIndex = null
-    for (let i = s.length - 1; i >= 0; i--) {
-        if (s[i] === "2") {
-            largestNumIndex = i
-            break;
-        }
+  let largestNumIndex = null;
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] === '2') {
+      largestNumIndex = i;
+      break;
     }
-    return largestNumIndex !== null ? s.slice(0, (largestNumIndex + 1)) : ""
-    
+  }
+  return largestNumIndex !== null ? s.slice(0, largestNumIndex + 1) : '';
 };
+largestEven('1212124');
