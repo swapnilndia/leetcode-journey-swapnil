@@ -12,14 +12,16 @@
  * - Be careful with sign handling when manipulating digits.
  */
 var reverse = function (x) {
-    const limit = -Math.pow(2, 31);
-    let reverse = 0;
-    let absoluteNumber = Math.abs(x);
-    while (absoluteNumber > 0) {
-        let lastDigit = absoluteNumber % 10;
-        reverse = (reverse * 10) + lastDigit;
-        absoluteNumber = Math.floor(absoluteNumber / 10)
-    }
-    if (reverse < limit || reverse > (Math.abs(limit) - 1)) return 0;
-    return x < 0 ? -reverse : reverse;
+  const limit = -Math.pow(2, 31);
+  let reverse = 0;
+  let absoluteNumber = Math.abs(x);
+  while (absoluteNumber > 0) {
+    let lastDigit = absoluteNumber % 10;
+    reverse = reverse * 10 + lastDigit;
+    absoluteNumber = Math.floor(absoluteNumber / 10);
+  }
+  if (reverse < limit || reverse > Math.abs(limit) - 1) return 0;
+  return x < 0 ? -reverse : reverse;
 };
+
+reverse(134123);
