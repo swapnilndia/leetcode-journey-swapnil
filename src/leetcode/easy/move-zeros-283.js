@@ -28,7 +28,6 @@ function moveZeros(nums) {
   for (let i = numShifted; i < nums.length; i++) {
     nums[i] = 0;
   }
-  console.log(nums, numShifted);
 }
 
 moveZeros(numArr);
